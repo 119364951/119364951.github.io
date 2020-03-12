@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 	
+		<!-- header section -->
 	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 		<title>IS1113</title>
 		<link rel="stylesheet" type="text/css" href="cvtrial.css">
 			<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,16 +30,58 @@
 		::-webkit-scrollbar-thumb:hover {
 		  background: #555; 
 		}
+		
 		</style>
+		
+		<style type="text/css">
+			#container {
+			  overflow: hidden;
+			  width: 800px;
+			  height: 230px;
+			  margin: 0 auto;
+			  cursor: pointer;
+			  margin-top:150px;
+			}
+
+			#imgs {
+			  display: block;
+			  padding: 0;
+			  width: 200%;
+			}
+
+			#imgs li {
+			  padding-right: 10px;
+			  display: inline-block;
+			 *display:inline;
+			}
+
+			#imgs img {
+			  width: 160px;
+			  height: 120px;
+			}
+
+			.title {
+			  display: block;
+			  width: 100%;
+			  height: 38px;
+			  line-height: 38px;
+			  color: white;
+			  font-weight: bold;
+			  text-align: center;
+			  background: #ddd;
+			}
+		</style>
+		
 	</head>
 	
+		<!-- body section -->
 	<body>
 	 <div class="header">
 		<h1>IS1113</h1>
 		<h4>Interests</h4>
-	 </div>
-	
+	 </div>	 
 	 
+	 	 <!-- Navbar -->
 	 <div class="topnav">
 		<a href="index.html">Home</a>
 		<a href="cvpd.html">CV</a>
@@ -43,7 +90,7 @@
 		<a href="Ebus1.html">Services</a>		
 	 </div>
 	 
-	 <div class="row">
+	  <div class="row">
 	 
 	 <div class="column">
 		<h2>Interests</h2>
@@ -54,13 +101,61 @@
 		</p>
 	 </div>
 	 
+	 <!-- Jquery image scroller -->
+		<div id="container"> <span class="title">Gallery</span>
+		  <ul id="imgs"> 
+			<li><img src="archery1.jpg" alt=""></li>
+			<li><img src="archery2.jpg" alt=""></li>
+			<li><img src="archery3.jpg" alt=""></li>
+			<li><img src="taekwondo.png" alt=""></li>
+			<li><img src="taekwondo2.jpg" alt=""></li>								
+			<li><img src="taekwondo3.jpg" alt=""></li>
+		  </ul>
+		  <span class="title"></span> 
+		 </div>
+	
+		<div id="controler"> </div>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="ImageScroll.js"></script>
+		<script type="text/javascript">
+
+		  $('#imgs').imageScroll({
+			orientation:"left",
+			speed:600,
+			interval:1000,
+			hoverPause:true,
+			callback:function(){
+			  var ordinal = $(this).find("img").first().attr("src");
+			  <!-- console.log(ordinal); -->
+			  $(this).next("span").text("CallbackDisplay: hidden "+ordinal+"!");
+			}
+		  });
+
+		</script>
+		
+		<script type="text/javascript">
+
+			  var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', 'UA-36251023-1']);
+			  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+			  _gaq.push(['_trackPageview']);
+
+			  (function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
+
+		</script>
+	 
+	 <!-- Text -->
 	  <div class="column">
 		<h2>Sports:</h2>
 		<p>
 		Sports have always been an endearing passion of mine ever since I was a little kid. Never constrained to one discipline of sport I moved
 		around a lot trying almost everything when I was young whether that be rowing along the Lee or practicing tennis in the courts of Douglas.
 		However, after moving into first year of secondary school I figured I ought to stay and achieve mastery or at least some level of competency
-		in a few sports. The two sports I had chosen were the ones that held my interest for the longest time being archery and chess. I was lucky
+		in a few sports. The two sports I had chosen were the ones that held my interest for the longest time being archery and taekwondo. I was lucky
 		to have chosen these as my sports because as I soon found out, I often did not have enough time to dedicate myself to these sports especially
 		around the exam years of third year and sixth year. However now that I am in university, I have now found time for these two sports again,
 		catching up on lost time. Despite the setbacks I will continue to pursue these sports throughout my university years and hopefully into the future.
